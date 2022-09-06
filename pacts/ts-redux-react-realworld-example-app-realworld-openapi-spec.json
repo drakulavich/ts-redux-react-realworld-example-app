@@ -1,0 +1,109 @@
+{
+  "consumer": {
+    "name": "ts-redux-react-realworld-example-app"
+  },
+  "interactions": [
+    {
+      "description": "get all tags",
+      "providerState": "tags exist",
+      "request": {
+        "method": "GET",
+        "path": "/tags"
+      },
+      "response": {
+        "body": {
+          "tags": [
+            "reactjs",
+            "angularjs"
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "get user",
+      "providerState": "user exist",
+      "request": {
+        "headers": {
+          "Authorization": "Token xxxxxx.yyyyyyy.zzzzzz"
+        },
+        "method": "GET",
+        "path": "/user"
+      },
+      "response": {
+        "body": {
+          "user": {
+            "bio": "I work at statefarm",
+            "email": "jake@jake.jake",
+            "image": "https://i.stack.imgur.com/xHWG8.jpg",
+            "token": "jwt.token.here",
+            "username": "jake"
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "get user",
+      "providerState": "user has logged in",
+      "request": {
+        "headers": {
+          "Authorization": "Token xxxxxx.yyyyyyy.zzzzzz"
+        },
+        "method": "GET",
+        "path": "/user"
+      },
+      "response": {
+        "body": {
+          "user": {
+            "bio": "I work at statefarm",
+            "email": "jake@jake.jake",
+            "image": "https://i.stack.imgur.com/xHWG8.jpg",
+            "token": "jwt.token.here",
+            "username": "jake"
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.1.2"
+    },
+    "pactRust": {
+      "ffi": "0.3.9",
+      "models": "0.4.5"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "realworld-openapi-spec"
+  }
+}
