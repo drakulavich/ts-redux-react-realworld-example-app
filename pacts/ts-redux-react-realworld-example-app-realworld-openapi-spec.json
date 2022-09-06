@@ -30,37 +30,6 @@
     },
     {
       "description": "get user",
-      "providerState": "user exist",
-      "request": {
-        "headers": {
-          "Authorization": "Token xxxxxx.yyyyyyy.zzzzzz"
-        },
-        "method": "GET",
-        "path": "/user"
-      },
-      "response": {
-        "body": {
-          "user": {
-            "bio": "I work at statefarm",
-            "email": "jake@jake.jake",
-            "image": "https://i.stack.imgur.com/xHWG8.jpg",
-            "token": "jwt.token.here",
-            "username": "jake"
-          }
-        },
-        "headers": {
-          "Content-Type": "application/json"
-        },
-        "matchingRules": {
-          "$.body": {
-            "match": "type"
-          }
-        },
-        "status": 200
-      }
-    },
-    {
-      "description": "get user",
       "providerState": "user has logged in",
       "request": {
         "headers": {
